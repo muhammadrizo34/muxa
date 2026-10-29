@@ -1,6 +1,6 @@
 function addUser(arr, name, lastname, age, job, email, password) {
     let newUser = {
-        id: arr.lenght + 1
+        id: arr.length === 0 ? 1 : users.at(-1).id + 1,
         name,
         lastname,
         age,
@@ -12,7 +12,7 @@ function addUser(arr, name, lastname, age, job, email, password) {
     return newUser;
 }
 
-export const users = [
+const users = [
     {
         id: 1,
         name: "Ali",
@@ -104,6 +104,7 @@ export const users = [
         password: "dilnoza123",
     },
 ];
+
 console.log(
     addUser(
         users,
@@ -113,5 +114,5 @@ console.log(
         "boxer",
         "johndoe@gmail.com",
         "1234",
-    );
-):
+    ),
+);
